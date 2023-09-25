@@ -1,0 +1,10 @@
+Problem 2
+List community areas with per capita income less than 11000.
+%sql select community_area_name, per_capita_income_ from chicago_socioeconomic_data where per_capita_income_ < 11000;
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+community_area_name	per_capita_income_
+West Garfield Park	10934
+South Lawndale	10402
+Fuller Park	10432  
+Riverdale	8201
