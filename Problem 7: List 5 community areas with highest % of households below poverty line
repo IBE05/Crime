@@ -1,0 +1,12 @@
+Problem 7: List 5 community areas with highest % of households below poverty line
+
+%sql select community_area_name, percent_households_below_poverty from chicago_socioeconomic_data\
+order by percent_households_below_poverty desc nulls last limit 5;
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+community_area_name	percent_households_below_poverty
+Riverdale	56.5
+Fuller Park	51.2
+Englewood	46.6
+North Lawndale	43.1
+East Garfield Park	42.4
