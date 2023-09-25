@@ -1,0 +1,8 @@
+Problem 8: Which community area is most crime prone
+
+%sql select community_area_number, count(*) as Number_of_Crime from crime group by community_area_number\
+order by number_of_crime desc limit 1;
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+community_area_number      	number_of_crime
+          None                  	44
