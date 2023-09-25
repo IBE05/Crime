@@ -1,0 +1,24 @@
+Problem 10: Use a sub-query to determine the Community Area Name with most number of crimes
+
+%sql create view num_crime as\
+select community_area_number, count(*) as number_of_crime\
+from crime group by community_area_number;
+#num_crime = %sql select community_area_number, count(*) as Number_of_Crime from crime group by community_area_number
+%sql select * from num_crime limit 5;
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+(ibm_db_dbi.ProgrammingError) ibm_db_dbi::ProgrammingError: Statement Execute Failed: [IBM][CLI Driver][DB2/LINUXX8664] SQL0601N  The name of the object to be created is identical to the existing name "TZF21151.NUM_CRIME" of type "VIEW".  SQLSTATE=42710 SQLCODE=-601
+[SQL: create view num_crime as select community_area_number, count(*) as number_of_crime from crime group by community_area_number;]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+community_area_number	number_of_crime
+1	6
+2	7
+3	4
+4	3
+5	4
+%sql select community_area_name from schools s\
+    where s.community_area_number = (select community_area_number\
+    from num_crime where number_of_crime = (select max(number_of_crime) from num_crime));
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
