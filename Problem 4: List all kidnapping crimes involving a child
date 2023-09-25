@@ -1,0 +1,7 @@
+Problem 4:  List all kidnapping crimes involving a child
+
+%sql select primary_type from crime where primary_type='KIDNAPPING' and description like '%CHILD%';
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+primary_type
+KIDNAPPING
