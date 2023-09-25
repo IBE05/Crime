@@ -1,0 +1,11 @@
+Problem 6: List the average safety score for all types of schools
+
+%sql select "Elementary, Middle, or High School", avg(safety_score) as average_safety_score from 
+schools group by "Elementary, Middle, or High School"; 
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+Elementary, Middle, or High School	    average_safety_score
+              ES	                          49.520383
+              HS	                          49.623529
+              MS	                          48.000000
+              None	                          None
