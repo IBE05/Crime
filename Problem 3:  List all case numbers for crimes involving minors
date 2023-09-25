@@ -1,0 +1,10 @@
+Problem 3:  List all case numbers for crimes involving minors?
+
+%sql select case_number from crime where primary_type = 'OFFENSE INVOLVING CHILDREN';
+ * ibm_db_sa://tzf21151:***@dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50000/BLUDB
+Done.
+case_number
+HN567387
+HR391350
+HM768251
+HT394616
